@@ -1,0 +1,6 @@
+rootProject.name='DaggerExample'
+include ':app'
+include ':feature-one-api'
+include ':feature-one-impl'
+include ':feature-two-api'
+include ':feature-two-impl'
