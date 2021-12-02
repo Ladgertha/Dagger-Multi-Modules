@@ -1,0 +1,25 @@
+digraph {
+  graph [label="DaggerExample\n ",labelloc=t,fontsize=30,ranksep=1.4];
+  node [style=filled, fillcolor="#bbbbbb"];
+  rankdir=TB;
+
+  # Projects
+
+  ":app" [shape=box, fillcolor="#baffc9"];
+  ":feature-one-api" [fillcolor="#ffb3ba"];
+  ":feature-one-impl" [fillcolor="#baffc9"];
+  ":feature-two-api" [fillcolor="#ffb3ba"];
+  ":feature-two-impl" [fillcolor="#baffc9"];
+
+  {rank = same; ":app";}
+
+  # Dependencies
+
+  ":app" -> ":feature-one-api" [style=dotted]
+  ":app" -> ":feature-one-impl" [style=dotted]
+  ":app" -> ":feature-two-api" [style=dotted]
+  ":app" -> ":feature-two-impl" [style=dotted]
+  ":feature-one-impl" -> ":feature-one-api" [style=dotted]
+  ":feature-one-impl" -> ":feature-two-api" [style=dotted]
+  ":feature-two-impl" -> ":feature-two-api" [style=dotted]
+}
